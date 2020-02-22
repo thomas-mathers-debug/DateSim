@@ -13,16 +13,20 @@ public class DialogueManager : MonoBehaviour
 
     private bool inDialouge;
 
-    public bool loadDialogue(string path)
+    public bool loadDialogue(string path, Sprite dialogueImage)
     {
+        
         if (!inDialouge)
         {
+            girl.sprite = dialogueImage;
+            girl.color = new Color32(255, 255, 255, 255);
             girl.enabled = false;
+            //GetComponent<Image>().sprite = dialogueImage;
             index = 0;
             var jsonTextFile = Resources.Load<TextAsset>("Dialogues/" + path);
+            //girl.sprite = Resources.Load<Sprite>(dialogueImage);
             dialogue = JsonMapper.ToObject(jsonTextFile.text);
             inDialouge = true;
-
             return true;
         }
         return false;
@@ -32,6 +36,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (inDialouge)
         {
+           
             girl.enabled = true;
             JsonData line = dialogue[index];
             if (line[0].ToString() == "EOD")
@@ -48,7 +53,7 @@ public class DialogueManager : MonoBehaviour
             }
 
             textDisplay.text = speaker + ": " + line[0].ToString();
-            UnityEngine.Debug.Log(line[0].ToString());
+            Debug.Log(line[0].ToString());
             index++;
         }
         return true;
