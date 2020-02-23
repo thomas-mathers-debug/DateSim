@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Npc
+    uniqueID: 3930924361
+    locked: 0
+  - name: Player
+    uniqueID: 3124363635
+    locked: 0
+  - name: Interface
+    uniqueID: 720916099
+    locked: 0
