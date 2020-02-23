@@ -36,6 +36,14 @@ public class DialogueTrigger : MonoBehaviour
 
     private void runDialogue(bool keyTrigger)
     {
+        if (Input.anyKey && !inTrigger && dialogueLoaded)
+        {
+            if (dialogueLoaded)
+            {
+                dialogueLoaded = dialogueManager.finishConvo();
+            }
+        }
+
         if (keyTrigger)
         {
             if (inTrigger && !dialogueLoaded)
@@ -43,16 +51,21 @@ public class DialogueTrigger : MonoBehaviour
                 dialogueLoaded = dialogueManager.loadDialogue(dialoguePath, dialogueImage);
             }
 
-            if (dialogueLoaded)
+            if (dialogueLoaded && inTrigger)
             {
                 dialogueLoaded = dialogueManager.printLine();
             }
         }
+        
     }
     // Update is called once per frame
     void Update()
     {
-        runDialogue(Input.GetKeyDown(KeyCode.C));
+        if(Input.GetKeyDown(KeyCode.C) || dialogueLoaded)
+        {
+            runDialogue(Input.GetKeyDown(KeyCode.C));
+        }
+        
         
     }
 }

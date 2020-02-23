@@ -32,6 +32,17 @@ public class DialogueManager : MonoBehaviour
         return false;
     }
 
+    public bool finishConvo()
+    {
+        inDialouge = false;
+        girl.enabled = false;
+
+        textDisplay.text = "";
+        return false;
+    }
+
+    
+
     public bool printLine()
     {
         if (inDialouge)
