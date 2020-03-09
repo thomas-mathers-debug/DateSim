@@ -18,3 +18,4 @@ So far I've found it to be a super cool project to be working on.
 
 
 # https://www.youtube.com/watch?v=YJLcanHcJxo
+![Image of Yaktocat](https://github.com/thomas-mathers-debug/DateSim/blob/master/CoverPhoto.PNG)
