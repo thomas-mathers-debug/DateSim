@@ -17,5 +17,5 @@ So far I've found it to be a super cool project to be working on.
 * Inventory
 
 
-# https://www.youtube.com/watch?v=YJLcanHcJxo
+
 ![DateSim Game](https://github.com/thomas-mathers-debug/DateSim/blob/master/CoverPhoto.PNG)
