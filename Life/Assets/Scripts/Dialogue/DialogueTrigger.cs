@@ -16,25 +16,25 @@ public class DialogueTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dialogueManager.textBox.enabled = false;
 
-        //Debug.Log(GameObject.Find("DialogueManger").GetComponent<DialogueManager>());
         if (dialogueManager == null) //find a dialogue
             dialogueManager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) //collision effect
     {
         if (collision.gameObject == player)
             inTrigger = true;
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)//out of trigger
     {
         if (collision.gameObject == player)
             inTrigger = false;
     }
 
-    private void runDialogue(bool keyTrigger)
+    private void runDialogue(bool keyTrigger) // check dialogue with trigger
     {
         if (Input.anyKey && !inTrigger && dialogueLoaded)
         {
