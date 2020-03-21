@@ -17,6 +17,7 @@ public class DialogueTrigger : MonoBehaviour
     void Start()
     {
         dialogueManager.textBox.enabled = false;
+        dialogueManager.speakerBoxImg.enabled = false;
 
         if (dialogueManager == null) //find a dialogue
             dialogueManager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();

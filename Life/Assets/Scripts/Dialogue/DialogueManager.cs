@@ -6,10 +6,13 @@ using LitJson;
 public class DialogueManager : MonoBehaviour
 {
     public Text textDisplay;
-    private JsonData dialogue;
-    private int index;
+    public Text speakerBox;
     public Image girl;
     public Image textBox;
+    public Image speakerBoxImg;
+    private JsonData dialogue;
+    private int index;
+    
     private string speaker;
 
     private bool inDialouge;
@@ -21,8 +24,6 @@ public class DialogueManager : MonoBehaviour
         {
             girl.sprite = dialogueImage;
             girl.color = new Color32(255, 255, 255, 255);
-            girl.enabled = false;
-            textBox.enabled = false;
             index = 0;
             var jsonTextFile = Resources.Load<TextAsset>("Dialogues/" + path);
             dialogue = JsonMapper.ToObject(jsonTextFile.text);
@@ -37,8 +38,11 @@ public class DialogueManager : MonoBehaviour
         inDialouge = false;
         girl.enabled = false;
         textBox.enabled = false;
+        speakerBox.enabled = false;
+        speakerBoxImg.enabled = false;
 
         textDisplay.text = "";
+        speakerBox.text = "";
         return false;
     }
 
@@ -49,9 +53,10 @@ public class DialogueManager : MonoBehaviour
         if (inDialouge)
         {
             textBox.enabled = true;
+            speakerBox.enabled = true;
             girl.enabled = true;
+            speakerBoxImg.enabled = true;
             JsonData line = dialogue[index];
-            Debug.Log(line[0]);
            
             
             if (line[0].ToString() == "EOD")
@@ -63,8 +68,8 @@ public class DialogueManager : MonoBehaviour
             {
                 speaker = key.ToString();
             }
-
-            textDisplay.text = speaker + ": " + line[0].ToString();
+            speakerBox.text = speaker + ": ";
+            textDisplay.text = line[0].ToString();
             index++;
         }
         return true;

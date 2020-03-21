@@ -1,15 +1,15 @@
 [
     {
-        "Player": "Hello"
+        "Tom": "Hello"
     },
     {
-        "Girl": "It's a nice day isn't it"
+        "Jenny": "It's a nice day isn't it"
     },
     {
-        "Player": "Quite a nice day yeah"
+        "Tom": "Quite a nice day yeah"
     },
     {
-        "Girl": "Anyway Goodbye"
+        "Jenny": "Anyway Goodbye"
     },
     {
         "EOD": "EOD"
