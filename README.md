@@ -2,7 +2,7 @@
 
 This is a side project of mine, Its a dating simulator game done with Unity in C#
 
-So far I've found it to be a super cool project to be working on.
+So far I've found it to be an awsome project to be working on and it's given me a great insight into C#.
 
 
 # Completed 
